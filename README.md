@@ -27,10 +27,10 @@ BUNRU (NASM Builder and Runner) is a Linux CLI tool that builds, runs, and debug
   |--------|-----------------------------------------------|
   | `-b`   | Builds the file(s).                           |
   | `-d`   | Debugs the input file(s).                     | 
-  | `-r`   | Compiles and executes the file(s).            |
+  | `-r`   | Build and executes the file(s).               |
 
   ### EXAMPLES:
-  ```bunru main.asm -r``` builds and runs ```main.asm```.
+  ```bunru main.asm -r``` build and executes ```main.asm```.
   
   ```bunru main.asm -d``` debugs ```main.asm```.
   
