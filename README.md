@@ -31,7 +31,9 @@ Run ```chmod +x bunru.sh``` on your terminal.
 
   ### EXAMPLES:
   ```bunru main.asm -r``` builds and runs ```main.asm```.
+  
   ```bunru main.asm -d``` debugs ```main.asm```.
+  
   ```bunru main.asm -b```builds ```main.asm```.
 
 
