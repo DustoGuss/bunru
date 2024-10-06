@@ -18,7 +18,7 @@ Run ```chmod +x bunru.sh``` on your terminal.
 ***DON'T FORGET to move the ```bunru.sh``` file on the ```/usr/local/bin``` folder or on the ```/usr/bin/``` folder.***
 
 ## How to use BUNRU
-  ```bunru <file or files> <flag>```
+  ```bunru <file(s)> <flag>```
   ### FLAGS TABLE:
   
     | Flag   | Description                                   |
