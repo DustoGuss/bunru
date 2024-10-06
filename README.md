@@ -19,6 +19,7 @@ Run ```chmod +x bunru.sh``` on your terminal.
 ***DON'T FORGET to move the ```bunru.sh``` file on the ```/usr/local/bin``` folder or on the ```/usr/bin/``` folder.***
 
 ## How to use BUNRU
+  Run BUNRU with the following command:
   ```bunru <file(s)> <flag>```
   ### FLAGS TABLE:
   
@@ -27,6 +28,10 @@ Run ```chmod +x bunru.sh``` on your terminal.
     | `-b`   | Builds the file(s).                           |
     | `-d`   | Debugs the input file(s).                     | 
     | `-r`   | Compiles and executes the file(s).            |
+
+  ### EXAMPLES:
+    ```bunru main.asm -r``` builds and runs ```main.asm```.
+    ```bunru main.s -d``` debugs ```main.s```.
 
 
 
