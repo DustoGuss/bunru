@@ -13,6 +13,20 @@ BUNRU (NASM Builder and Runner) is a Linux CLI tool that builds, runs, and debug
   ```bash
   git clone https://github.com/DustoGuss/bunru.git
 
+Run ```chmod +x bunru.sh``` on your terminal.
+
+***DON'T FORGET to put "bunru.sh" on the ```/usr/local/bin``` or on the ```/usr/bin/``` folder.***
+
+## How to use BUNRU
+  ```bunru <file or files> <flag>```
+  ### FLAGS TABLE:
+    | Flag   | Description                                   |
+    |--------|-----------------------------------------------|
+    | `-b`   | Builds the file(s).                           |
+    | `-d`   | Debugs the input file(s).                     | 
+    | `-r`   | Compiles and executes the file(s).            |
+
+
 
   
 
