@@ -4,7 +4,7 @@ BUNRU (NASM Builder and Runner) is a Linux CLI tool that builds, runs, and debug
 ![BUNRU](https://github.com/user-attachments/assets/fef27d4a-7c30-4b00-acde-f212fe94ae58)
 --
 ## How to Install
-**Note:** Since it is a **NASM** Builder and Runner, you will need to have [NASM](https://www.nasm.us/) installed on your computer before you install BUNRU.
+**Note:** Since BUNRU is a **NASM** Builder and Runner, you will need to have [NASM](https://www.nasm.us/) installed on your computer before you install BUNRU.
 
 ### Option 1: The Lazy Way
 - Go to the [Releases Page](https://github.com/DustoGuss/bunru/releases), download, and extract the latest release.
@@ -14,9 +14,7 @@ BUNRU (NASM Builder and Runner) is a Linux CLI tool that builds, runs, and debug
   ```bash
   git clone https://github.com/DustoGuss/bunru.git
 
-***Run ```chmod +x bunru.sh``` on your terminal.***
-
-***DON'T FORGET to move the ```bunru.sh``` file to the ```/usr/local/bin``` folder or to the ```/usr/bin/``` folder.***
+***BUNRU AUTOMATICALLY MOVES ITSELF TO THE ```/usr/local/bin``` FOLDER, IF IT DOESN'T WORK, PLEASE DO IT MANUALLY.***
 
 ## How to use BUNRU
   Run BUNRU with the following command:
@@ -34,7 +32,7 @@ BUNRU (NASM Builder and Runner) is a Linux CLI tool that builds, runs, and debug
   
   ```bunru main.asm -d``` debugs ```main.asm```.
   
-  ```bunru main.asm -b``` builds ```main.asm```.
+  ```bunru main.asm test.s uhh.asm -b``` builds ```main.asm```, ```test.s``` and ```uhh.asm```.
 
 
 
