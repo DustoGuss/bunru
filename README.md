@@ -23,15 +23,16 @@ Run ```chmod +x bunru.sh``` on your terminal.
   ```bunru <file(s)> <flag>```
   ### FLAGS TABLE:
   
-    | Flag   | Description                                   |
-    |--------|-----------------------------------------------|
-    | `-b`   | Builds the file(s).                           |
-    | `-d`   | Debugs the input file(s).                     | 
-    | `-r`   | Compiles and executes the file(s).            |
+  | Flag   | Description                                   |
+  |--------|-----------------------------------------------|
+  | `-b`   | Builds the file(s).                           |
+  | `-d`   | Debugs the input file(s).                     | 
+  | `-r`   | Compiles and executes the file(s).            |
 
   ### EXAMPLES:
-    ```bunru main.asm -r``` builds and runs ```main.asm```.
-    ```bunru main.s -d``` debugs ```main.s```.
+  ```bunru main.asm -r``` builds and runs ```main.asm```.
+  ```bunru main.asm -d``` debugs ```main.asm```.
+  ```bunru main.asm -b```builds ```main.asm```.
 
 
 
