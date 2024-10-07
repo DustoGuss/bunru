@@ -1,13 +1,13 @@
 section .data
-    ht db 'Hello There! :D', 0xA
-    htlen equ $-ht
+    gt db 'Goodbye There! D:', 0xA
+    gtlen equ $-gt
 
 section .text
     global _start
 
 _start:
-    mov rsi, ht
-    mov rdx, htlen
+    mov rsi, gt
+    mov rdx, gtlen
     call print
 
     call end
