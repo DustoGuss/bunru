@@ -15,7 +15,8 @@ BUNRU (NASM Builder and Runner) is a Linux CLI tool that builds, runs, and debug
   git clone https://github.com/DustoGuss/bunru.git
 
 ***ON YOUR TERMINAL, ENTER THE BUNRU DIRECTORY AND RUN THE BUNRU INSTALLER WITH ```sudo ./BunruInstaller```***
-***BUNRU AUTOMATICALLY MOVES ITSELF TO THE ```/usr/local/bin``` FOLDER, IF IT DOESN'T WORK, PLEASE DO IT MANUALLY.***
+
+***THE BUNRU INSTALLER AUTOMATICALLY MOVES BUNRU TO THE ```/usr/local/bin``` FOLDER, IF IT DOESN'T WORK, PLEASE DO IT MANUALLY.***
 
 ## How to use BUNRU
   Run BUNRU with the following command:
