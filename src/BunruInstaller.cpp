@@ -57,39 +57,56 @@ void UninstallBunru()
 
 int main()
 {
-    char proceed;
+    std::string proceed;
     alreadyinstalled();
     if (alreadyinstalled() == false) 
     {
         std::cout << "Welcome to the BUNRU Installer! Proceed with the installation? (y/n) ";
-        std::cin >> proceed;
-
-        if (proceed == 'y' || proceed == 'Y') 
+        std::getline(std::cin, proceed);
+        if (proceed.length() == 1)
         {
-            InstallBunru();
-        } 
-        else 
+            char c = proceed[0];
+            if (c == 'y' || c == 'Y') 
+            {
+                InstallBunru();
+            } 
+            else 
+            {
+                std::cout << "\nInstallation canceled. Goodbye! :D" << std::endl;
+            }
+        }
+        else
         {
-            std::cout << "\nInstallation canceled. Goodbye! :D" << std::endl;
+            std::cerr << "\nUnknown \'" << proceed << "\'" << std::endl;
+            return 1;
         }
     } 
     else 
     {
         std::cout << "Welcome to the BUNRU Installer! It seems like you already installed BUNRU, do you want to reinstall or uninstall BUNRU? (r: reinstall/u: uninstall): ";
-        std::cin >> proceed;
+        std::getline(std::cin, proceed);
+        if (proceed.length() == 1)
+        {
+            char c = proceed[0];           
+            if (c == 'r' || c == 'R')
+            {
+                std::cout << "\nReinstalling...\n" << std::endl;
+                reinstalling = true;
+                UninstallBunru();
+                InstallBunru();
+                std::cout << "BUNRU succesfully reinstalled! :D" << std::endl;
+            } else if (c == 'u' || c == 'U')
+            {
+                std::cout << "\nUninstalling BUNRU...\n" << std::endl;
+                UninstallBunru();
+                std::cout << "BUNRU succesfully uninstalled! :D" << std::endl;
+            }
 
-        if (proceed == 'r' || proceed == 'R')
+        }
+        else
         {
-            std::cout << "\nReinstalling...\n" << std::endl;
-            reinstalling = true;
-            UninstallBunru();
-            InstallBunru();
-            std::cout << "BUNRU succesfully reinstalled! :D" << std::endl;
-        } else if (proceed == 'u' || proceed == 'U')
-        {
-            std::cout << "\nUninstalling BUNRU...\n" << std::endl;
-            UninstallBunru();
-            std::cout << "BUNRU succesfully uninstalled! :D" << std::endl;
+            std::cerr << "\nUnknown \'" << proceed << "\'" << std::endl;
+            return 1;
         }
     }
     return 0;

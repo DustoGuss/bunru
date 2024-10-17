@@ -1,12 +1,11 @@
-#!/bin/bash
-
 # NASM BUILD AND RUNNER (BUNRU) BY DUSTGUSS
 # https://github.com/DustoGuss/bunru
 
-files=("$@") 
+files=("$@")
 flag="${files[-1]}"
 unset 'files[-1]'
-
+Version="1.1.0"
+needflag=true
 GREEN="\033[32m"
 BLUE="\033[34m"
 RED="\033[31m"
@@ -16,17 +15,17 @@ RESET="\033[0m"
 build() {
     for file in "${files[@]}"; do
         echo -e "${BOLD}$file:${RESET}"
-        echo -e "${BOLD}${BLUE}[Compiling $file...]${RESET}"
+        echo -e "${BOLD}${BLUE}[Building $file...]${RESET}"
         if [ -f "$file.asm" ]; then
             nasm -f elf64 -o "$file.o" "$file.asm"
         else
             nasm -f elf64 -o "$file.o" "$file.s"
         fi
-        echo -e "${BOLD}${GREEN}[Compiled $file!]${RESET}"
+        echo -e "${BOLD}${GREEN}[$file builded!]${RESET}"
         echo "----------"
         echo -e "${BOLD}${BLUE}[Linking $file...]${RESET}"
         ld "$file.o" -o "$file"
-        echo -e "${BOLD}${GREEN}[Linked $file!]${RESET}"
+        echo -e "${BOLD}${GREEN}[$file linked!]${RESET}"
         local exit_code=$? 
 
         if [ $exit_code -eq 0 ]; then
@@ -83,13 +82,59 @@ debug() {
     done
 }
 
-if [[ "$flag" == "-b" ]]; then
-    build
-elif [[ "$flag" == "-d" ]]; then
-    debug
-elif [[ "$flag" == "-r" ]]; then
-    build
-    run
+bin() {
+    for file in "${files[@]}"; do
+        echo -e "${BOLD}$file:${RESET}"
+        echo -e "${BOLD}${BLUE}[Creating $file.bin...]${RESET}"
+        if [ -f "$file.asm" ]; then
+            nasm -f bin -o "$file.bin" "$file.asm"
+        else
+            nasm -f bin -o "$file.bin" "$file.s"
+        fi
+        echo -e "${BOLD}${GREEN}[$file.bin created!]${RESET}"
+        local exit_code=$? 
+
+        if [ $exit_code -eq 0 ]; then
+            echo -e "${BOLD}${GREEN}Bin creation of $file ended without errors! :D${RESET}"
+        else
+            echo -e "${BOLD}${RED}Bin creation of $file ended with errors... D:${RESET}"
+        fi
+        echo "---------"
+    done
+}
+
+if [ "$flag" == "-b" ]; then
+    if [ $needflag == true ]; then
+        build
+    fi
+fi
+
+if [ "$flag" == "-d" ]; then
+    if [ $needflag == true ]; then
+        debug
+    fi
+fi
+
+if [ "$flag" == "-r" ]; then
+    if [ $needflag == true ]; then
+        build
+        run
+    fi
+fi
+
+if [ "$flag" == "-bin" ]; then
+   if [ $needflag == true ]; then
+
+   fi 
+fi
+
+if [ "$file" == "--v" ]; then
+    needFlags=false
+    echo "BUNRU ${Version}"
+fi
+
+if [ "$flag" == "-b" ] || [ "$flag" == "-r" ] || [ "$flag" == "-d" ] || [ "$file" == "--v" ]; then
+    :
 else
     echo -e "${BOLD}${RED}Invalid flag! Use -b to build, -d to debug or -r to build and run.${RESET}"
 fi
