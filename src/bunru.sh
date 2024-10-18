@@ -1,11 +1,11 @@
+#!/bin/bash
 # NASM BUILD AND RUNNER (BUNRU) BY DUSTGUSS
-# BUNRU SOURCE CODE
 # https://github.com/DustoGuss/bunru
 
 files=("$@")
 flag="${files[-1]}"
 unset 'files[-1]'
-Version="1.1.0"
+Version="1.1.1"
 needflag=true
 GREEN="\033[32m"
 BLUE="\033[34m"
@@ -93,13 +93,6 @@ bin() {
             nasm -f bin -o "$file.bin" "$file.s"
         fi
         echo -e "${BOLD}${GREEN}[$file.bin created!]${RESET}"
-        local exit_code=$? 
-
-        if [ $exit_code -eq 0 ]; then
-            echo -e "${BOLD}${GREEN}Bin creation of $file ended without errors! :D${RESET}"
-        else
-            echo -e "${BOLD}${RED}Bin creation of $file ended with errors... D:${RESET}"
-        fi
         echo "---------"
     done
 }
@@ -125,7 +118,7 @@ fi
 
 if [ "$flag" == "-bin" ]; then
    if [ $needflag == true ]; then
-
+        bin
    fi 
 fi
 
