@@ -129,7 +129,7 @@ if [ "$flag" == "-bin" ]; then
 fi
 
 if [ "$flag" == "--v" ]; then
-    needFlags=false
+    needflag=false
     echo "BUNRU ${Version}"
 fi
 
