@@ -129,12 +129,12 @@ if [ "$flag" == "-bin" ]; then
    fi 
 fi
 
-if [ "$file" == "--v" ]; then
-    needFlags=false
+if [ "$flag" == "--v" ]; then
+    needflag=false
     echo "BUNRU ${Version}"
 fi
 
-if [ "$flag" == "-b" ] || [ "$flag" == "-r" ] || [ "$flag" == "-d" ] || [ "$file" == "--v" ]; then
+if [ "$flag" == "-b" ] || [ "$flag" == "-r" ] || [ "$flag" == "-d" ] || [ "$flag" == "--v" ]; then
     :
 else
     echo -e "${BOLD}${RED}Invalid flag! Use -b to build, -d to debug or -r to build and run.${RESET}"
