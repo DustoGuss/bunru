@@ -124,7 +124,7 @@ fi
 
 if [ "$flag" == "-bin" ]; then
    if [ $needflag == true ]; then
-
+        bin
    fi 
 fi
 
