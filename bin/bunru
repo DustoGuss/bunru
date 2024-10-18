@@ -92,13 +92,6 @@ bin() {
             nasm -f bin -o "$file.bin" "$file.s"
         fi
         echo -e "${BOLD}${GREEN}[$file.bin created!]${RESET}"
-        local exit_code=$? 
-
-        if [ $exit_code -eq 0 ]; then
-            echo -e "${BOLD}${GREEN}Bin creation of $file ended without errors! :D${RESET}"
-        else
-            echo -e "${BOLD}${RED}Bin creation of $file ended with errors... D:${RESET}"
-        fi
         echo "---------"
     done
 }
@@ -128,8 +121,6 @@ if [ "$flag" == "-bin" ]; then
    fi 
 fi
 
-if [ "$flag" == "--v" ]; then
-    needflag=false
 if [ "$flag" == "--v" ]; then
     needflag=false
     echo "BUNRU ${Version}"
